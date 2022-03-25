@@ -1,4 +1,5 @@
-const NotFound = () => {
+const NotFound = (props) => {
+  console.log(props);
   return (
     <div>
       <h2>error 404</h2>
