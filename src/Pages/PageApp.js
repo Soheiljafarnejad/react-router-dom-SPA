@@ -4,6 +4,8 @@ import AboutUsPage from "./AboutUsPage";
 import Blog from "./Blog";
 import BlogsPage from "./BlogsPage";
 import HomePage from "./HomePage";
+import NotFound from "./NotFound";
+import PostPage from "./PostPage";
 const PageApp = () => {
   return (
     <BrowserRouter>
@@ -13,6 +15,8 @@ const PageApp = () => {
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<Blog />} />
+          <Route path="/post/*" element={<PostPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>

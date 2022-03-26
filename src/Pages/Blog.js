@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 
 const Blog = () => {
   const params = useParams();
-  const id = parseInt(params.id) || 1;
+  const id = parseInt(params.id);
   return (
     <div>
       <h2>blog-{id}</h2>

@@ -1,33 +1,28 @@
 import style from "./Navigation.module.css";
 import { Link, NavLink } from "react-router-dom";
 const Navigation = () => {
+  const items = [
+    { to: "/", title: "Home" },
+    { to: "/about-us", title: "aboutUs" },
+    { to: "/blogs", title: "blogs" },
+    { to: "/post", title: "post" },
+  ];
+
   return (
     <nav className={style.nav}>
       <ul>
-        <li>
-          <NavLink
-            to="/"
-            className={(e) => e.isActive && `${style.activeLink}`}
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/about-us"
-            className={(e) => e.isActive && `${style.activeLink}`}
-          >
-            about-us
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/blogs"
-            className={(e) => e.isActive && `${style.activeLink}`}
-          >
-            blogs
-          </NavLink>
-        </li>
+        {items.map((item) => {
+          return (
+            <li>
+              <NavLink
+                className={(e) => e.isActive && `${style.activeLink}`}
+                to={item.to}
+              >
+                {item.title}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

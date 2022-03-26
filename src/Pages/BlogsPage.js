@@ -4,6 +4,9 @@ const BlogsPage = () => {
   return (
     <ul>
       <li>
+        <h1>Welcome Blogs Page.</h1>
+      </li>
+      <li>
         <Link to="/blogs/1">blog - 1</Link>
       </li>
       <li>
