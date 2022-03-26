@@ -1,17 +1,32 @@
 import style from "./Navigation.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Navigation = () => {
   return (
     <nav className={style.nav}>
       <ul>
         <li>
-          <Link to="/">Home page</Link>
+          <NavLink
+            to="/"
+            className={(e) => e.isActive && `${style.activeLink}`}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about-us">AboutUs page</Link>
+          <NavLink
+            to="/about-us"
+            className={(e) => e.isActive && `${style.activeLink}`}
+          >
+            about-us
+          </NavLink>
         </li>
         <li>
-          <Link to="/blogs">blogs page</Link>
+          <NavLink
+            to="/blogs"
+            className={(e) => e.isActive && `${style.activeLink}`}
+          >
+            blogs
+          </NavLink>
         </li>
       </ul>
     </nav>
