@@ -1,20 +1,26 @@
 import { Link } from "react-router-dom";
 
 const BlogsPage = () => {
+  const items = [
+    { to: "/blogs/1", title: "blog - 1" },
+    { to: "/blogs/2", title: "blog - 2" },
+    { to: "/blogs/3", title: "blog - 3" },
+    { to: "/blogs/4", title: "blog - 4" },
+  ];
   return (
     <ul>
       <li>
         <h1>Welcome Blogs Page.</h1>
       </li>
-      <li>
-        <Link to="/blogs/1">blog - 1</Link>
-      </li>
-      <li>
-        <Link to="/blogs/2">blog - 2</Link>
-      </li>
-      <li>
-        <Link to="/blogs/3">blog - 3</Link>
-      </li>
+      {items.map((item) => {
+        return (
+          <li key={item.to}>
+            <Link to={{ pathname: item.to, search: "sort=name&age=20" }}>
+              {item.title}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };

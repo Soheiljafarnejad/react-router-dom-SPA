@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 
 const PostPage = () => {
   const params = useParams();
-  const id = params.id || 1;
+  console.log(params);
+  const id = params["*"] || 1;
   return (
     <div>
       <h2>post detail {id}</h2>

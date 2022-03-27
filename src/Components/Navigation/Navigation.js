@@ -1,5 +1,5 @@
 import style from "./Navigation.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Navigation = () => {
   const items = [
     { to: "/", title: "Home" },
@@ -13,9 +13,9 @@ const Navigation = () => {
       <ul>
         {items.map((item) => {
           return (
-            <li>
+            <li key={item.to}>
               <NavLink
-                className={(e) => e.isActive && `${style.activeLink}`}
+                className={(e) => `${e.isActive ? `${style.activeLink}` : ""}`}
                 to={item.to}
               >
                 {item.title}
